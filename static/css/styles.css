@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(./Home.png);
+    background-size: cover;
+}
+
+header {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    flex: 1; /* Faz o main ocupar o espaço restante */
+    overflow-y: auto; /* Permite rolagem se necessário */
+    
+    padding: 20px;
+}
+
+.form-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    gap: 2vh;
+    height: 150px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    border: 2px solid black;
+    width: 20%;
+}
+
+.input-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.input-name input {
+    border-radius: 5px; 
+    width: 100%;
+    padding: 2vh;
+}
+
+.buttonName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonName button{
+    background-color: green;
+    width: 70%;
+    padding: 1vh;
+}
+
+
+
+.container-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    
+    align-items: center;
+}
+
+.add-task {
+    width: 15%;
+    padding: 10px;
+}
+
+.add-task button {
+    padding: 10px;
+    width: 100%;
+    background-color: green;
+    border-radius: 15px;
+}
+
+.task {
+    display: flex;
+    width: 70%;
+    height: 100px;
+    background-color: lightblue;
+    padding: 10px;
+    justify-content: space-between;
+    align-items:end;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2vh black;
+}
+
+.task .choice-button {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.task h3 {
+    color: rgb(68, 87, 183);
+}
+
+
+.task p {
+    font-size: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.task .status-color {
+    display: inline;
+    white-space: nowrap;
+    
+}
+
+footer {
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+

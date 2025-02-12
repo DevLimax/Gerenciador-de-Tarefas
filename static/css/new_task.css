@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.new_task {
+    display: inline;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    height: 100vh;            /* Ocupa a tela inteira */
+    width: 100%;
+    border: 2px solid rgb(198, 0, 0);
+}
+
+.form-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black ;
+    width: 100%; /* Ocupa todo o espaço da div maior */
+    max-width: 600px;
+    padding: 50px;
+}
+
+.input-box{
+    padding: 15px;
+}
+
+.input-box label{
+    display: flex;
+}
+
+.input-box input{
+    margin-top: 5px;
+    border-radius: 5px;
+
+}
+
+.input-box select {
+    border-radius: 5px;
+}
+
+.submit {
+    margin-left: 50px;
+    border: 2px solid black;
+    width: 50%;
+    padding: 10px;
+}
+

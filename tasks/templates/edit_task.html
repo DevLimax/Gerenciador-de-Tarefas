@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit task</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
+</head>
+<body>
+    <div class="container">
+        <form action="{% url 'edit_task' task.id %}" method="POST">{% csrf_token %}
+            <div class="input-edit">
+                <label >Titulo</label>
+                <input type="text" name="title" placeholder="{{task.title}}">
+            </div>
+            <div class="input-edit">
+                <label >Descrição</label>
+                <input type="text" name="description" placeholder="{{task.description}}">
+            </div>
+            <div class="input-edit">
+                <label >Status</label>
+                <select name="status">
+                    {% for status in Status %}
+                        <option value="{{status.id}}">{{status.type_status}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>
