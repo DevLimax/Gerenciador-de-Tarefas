@@ -1,0 +1,176 @@
+/* Importação de fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #E94E77;
+    --bg-color: #F4F7F9;
+    --text-color: #333;
+    --white: #fff;
+    --gray: #ccc;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Container Principal */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.container-tasks{
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tarefas quebrem para a linha de baixo */
+    gap: 20px; /* Aumenta o espaçamento entre as tarefas */
+    max-width: 1000px; /* Aumente conforme necessário */
+    justify-content: center; /* Centraliza as tarefas */
+}
+
+/* Botão Nova Tarefa */
+.add-task {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-task button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.add-task button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilo das Tarefas */
+.task {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 15px;
+    width: 320px; /* Define um tamanho fixo */
+    min-height: 180px; /* Evita que tarefas pequenas fiquem muito diferentes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém os botões na parte inferior */
+}
+
+.task h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.task p {
+    font-size: 0.9rem;
+    margin: 3px 0;
+}
+
+/* Botões de Ação */
+.choice-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.choice-button a {
+    text-decoration: none;
+}
+
+.choice-button button {
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.choice-button button:hover {
+    opacity: 0.8;
+}
+
+/* Botão de Excluir */
+.choice-button a:first-child button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Botão de Editar */
+.choice-button a:last-child button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.pagination a:hover {
+    background-color: var(--secondary-color);
+}
+
+.pagination span {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    .choice-button {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .choice-button button {
+        width: 100%;
+    }
+}
