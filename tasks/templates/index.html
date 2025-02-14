@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>  
@@ -14,11 +14,11 @@
     </header>
     <main>
         <div class="container">
+            <div class="add-task">
+                <a href="{% url 'new_task' %}"><button>Nova tarefa</button></a>
+            </div>
             <div class="container-tasks">
-                <div class="add-task">
-                    <a href="{% url 'new_task' %}"><button>Nova tarefa</button></a>
-                </div>
-                {% for task in tasks %}
+                {% for task in page_obj %}
                 <div class="task">
                     <div class="content">
                         <h3>Tarefa #{{ task.id }}</h3>
@@ -30,7 +30,7 @@
                     <div class="choice-button">
                         <a href="{% url 'remove_task' task.id %}" onclick="return confirmarExclusao()" >
                             <button>
-                                Exluir
+                                Excluir
                             </button>
                         </a>
                         <a href="{% url 'edit_task' task.id%}">
@@ -40,7 +40,21 @@
                         </a>
                     </div>  
                 </div>
-                {% endfor %}        
+                {% endfor %}  
+            </div>      
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">Primeira</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                {% endif %}
+            
+                <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+            
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+                {% endif %}
+            </div>
         </div>
     </main>
     
@@ -48,3 +62,4 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+    

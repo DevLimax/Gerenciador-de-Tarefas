@@ -1,12 +1,18 @@
 from django.shortcuts import render,redirect
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from .forms import Add_task_form
 from .models import Task,Status
 
 
 def home_view(request):
-    list_tasks = Task.objects.all()
-    return render(request,'index.html',{"tasks":list_tasks})
+    list_tasks = Task.objects.all().order_by('id')
+    paginator = Paginator(list_tasks, 4)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request,'index.html',{"page_obj":page_obj})
 
 def add_task_view(request):
     if request.method == "POST":
